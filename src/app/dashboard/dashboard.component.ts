@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,19 +8,8 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   title = 'Koala Hub';
-  url = 'https://pokeapi.co/api/v2/pokemon/ditto'
-  resource: any;
-
-  constructor(private http: HttpClient) { }
 
   fcnConsole() {
-    this.getApi().subscribe((data) => {
-      this.resource = data;
-      console.log(this.resource)
-    })
+    console.log("Galinhaa!!")
   };
-
-  getApi() {
-    return this.http.get(this.url);
-  }
 }
