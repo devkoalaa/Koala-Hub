@@ -22,7 +22,7 @@ export class PokemonComponent {
   searchPokemon(pkmName: string) {
     this.getApiPkm(pkmName).subscribe((data) => {
       this.resultPkm = data;
-      this.spritePkm = this.resultPkm.sprites.front_default;
+      this.spritePkm = this.resultPkm.sprites.other["official-artwork"].front_default;
       this.namePkm = this.resultPkm.name;
       this.typePkm = this.resultPkm.types[0].type.name;
       this.weightPkm = this.resultPkm.weight;
@@ -32,6 +32,6 @@ export class PokemonComponent {
   };
 
   getApiPkm(pkmName: string) {
-    return this.http.get(this.url + pkmName);
+    return this.http.get(this.url + pkmName.toLowerCase());
   }
 }
