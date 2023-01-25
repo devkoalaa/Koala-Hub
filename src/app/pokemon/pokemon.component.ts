@@ -11,6 +11,7 @@ export class PokemonComponent {
   url = 'https://pokeapi.co/api/v2/pokemon/';
   pkmBusca = new FormControl();
   resultPkm: any;
+  visible: string = "hidden";
 
   spritePkm: string = "";
   namePkm: string = "";
@@ -21,6 +22,8 @@ export class PokemonComponent {
 
   searchPokemon(pkmName: string) {
     this.getApiPkm(pkmName).subscribe((data) => {
+      this.visible = "";
+
       this.resultPkm = data;
       this.spritePkm = this.resultPkm.sprites.other["official-artwork"].front_default;
       this.namePkm = this.resultPkm.name;
