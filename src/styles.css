@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary: #0d47a1;
+    --body: #0f0f0f;
+    --text-menu: #fff;
+    --text-body: #fff;
+}
+
+body {
+    background-color: var(--body);
+}
