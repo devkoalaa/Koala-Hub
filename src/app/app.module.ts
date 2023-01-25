@@ -5,9 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { PrincipalComponent } from './principal/principal.component';
-import { SobreComponent } from './sobre/sobre.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
+import { FortniteComponent } from './fortnite/fortnite.component';
 
 @NgModule({
   imports: [
@@ -17,9 +17,9 @@ import { UsuarioComponent } from './usuario/usuario.component';
   ],
   declarations: [
     AppComponent,
-    PrincipalComponent,
-    SobreComponent,
-    UsuarioComponent,
+    DashboardComponent,
+    PokemonComponent,
+    FortniteComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

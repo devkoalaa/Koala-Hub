@@ -1,19 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { PrincipalComponent } from './principal/principal.component';
-import { SobreComponent } from './sobre/sobre.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
+import { FortniteComponent } from './fortnite/fortnite.component';
 
 const appRoutes: Routes = [
-  // { path: '', redirectTo: 'principal', pathMatch: 'full' },
-
-  { path: '', component: PrincipalComponent },
-  { path: 'sobre', component: SobreComponent },
-  { path: 'usuario', component: UsuarioComponent }
+  { path: '', component: DashboardComponent },
+  { path: 'pokemon', component: PokemonComponent },
+  { path: 'fortnite', component: FortniteComponent }
 ];
-
 
 @NgModule({
   imports: [

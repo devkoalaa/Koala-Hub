@@ -2,13 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-principal',
-  templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class PrincipalComponent {
+export class DashboardComponent {
   title = 'Koala Hub';
-  // url = 'http://localhost:5000/WeatherForecast';
   url = 'https://pokeapi.co/api/v2/pokemon/ditto'
   resource: any;
 
@@ -17,12 +16,11 @@ export class PrincipalComponent {
   fcnConsole() {
     this.getApi().subscribe((data) => {
       this.resource = data;
+      console.log(this.resource)
     })
   };
 
   getApi() {
-    console.log("Galinha")
-
     return this.http.get(this.url);
   }
 }
