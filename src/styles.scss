@@ -5,18 +5,20 @@
     --body: #0f0f0f;
     --text-menu: #fff;
     --text-body: #fff;
+    --card-color: #222222;
 }
 
 body {
-    // background-color: var(--body);
+    background-color: var(--body);
     font-family: var(--font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    --surface-card: var(--card-color);
 }
 
-form {
-    color: var(--text-body);
-}
+// form {
+//     color: var(--text-body);
+// }
 
 @import 'primeng/resources/primeng.min.css';
 @import "primeng/resources/themes/bootstrap4-dark-blue/theme.css";
