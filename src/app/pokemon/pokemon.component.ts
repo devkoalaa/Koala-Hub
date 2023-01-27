@@ -12,7 +12,6 @@ export class PokemonComponent {
   pkmBusca = new FormControl();
   resultPkm: any;
   visible: string = "hidden";
-
   spritePkm: string = "";
   namePkm: string = "";
   typePkm: string = "";

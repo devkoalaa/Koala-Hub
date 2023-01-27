@@ -1,1 +1,45 @@
-<p>usuario works!</p>
+<!-- <div>
+    <h1>Pokémon!</h1>
+</div> -->
+
+<div class="grid">
+    <div class="col-12 p-3">
+        <div class="surface-card shadow-2 border-rounded p-3" style="border-radius: 6px">
+            <div class="text-100 font-medium mb-3 text-xl">Buscar Player</div>
+            <form class="flex">
+                <input pInputText class="flex-auto mr-3" [formControl]="playerBusca">
+                <button pButton pRipple label="Buscar" (click)="searchPlayer(playerBusca.value)"></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="grid {{visible}}">
+    <div class="col-12 p-3">
+        <div class="surface-card shadow-2 border-rounded p-3" style="border-radius: 6px">
+            <div class="flex justify-content-between align-items-start">
+                <div>
+                    <div class="text-xl font-medium text-100 mb-2">{{playerName}}</div>
+                </div>
+            </div>
+            <ul class="list-none m-0 p-0">
+                <li class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border">
+                    <span class="text-100 font-medium text-sm">Nível</span>
+                    <span class="text-100 font-medium text-sm">{{playerLvl}}</span>
+                </li>
+                <li class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border">
+                    <span class="text-100 font-medium text-sm">Total de Vitórias</span>
+                    <span class="text-100 font-medium text-sm">{{playerWins}}</span>
+                </li>
+                <li class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border">
+                    <span class="text-100 font-medium text-sm">Total de Eliminações</span>
+                    <span class="text-100 font-medium text-sm">{{playerKills}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="col-6">
+    <img src="{{playerImg}}">
+</div> -->

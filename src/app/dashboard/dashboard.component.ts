@@ -12,4 +12,8 @@ export class DashboardComponent {
   fcnConsole() {
     console.log("Galinhaa!!")
   };
+
+  easterEgg() {
+    window.open("https://fortnite.gg/stats?player=brkoala");
+  }
 }
