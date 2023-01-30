@@ -4,7 +4,7 @@
 			<div class="text-100 font-medium mb-3 text-xl">Buscar Player</div>
 			<form class="flex">
 				<input pInputText class="flex-auto mr-3" [formControl]="playerBusca" />
-				<button pButton pRipple label="Buscar" (click)="searchPlayer('brkoala')"></button>
+				<button pButton pRipple label="Buscar" (click)="searchPlayer(playerBusca.value)"></button>
 			</form>
 		</div>
 	</div>
