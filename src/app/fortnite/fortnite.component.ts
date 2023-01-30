@@ -37,7 +37,7 @@ export class FortniteComponent {
 			this.playerAllKills = this.resultAllPlayer.data.stats.all.overall.kills
 			// this.playerImg = this.resultAllPlayer.data.image
 			this.playerImg =
-				'https://fortnite-api.com/images/cosmetics/br/glider_id_068_garageband/featured.png'
+				'https://fortnite-api.com/images/cosmetics/br/glider_id_068_garageband/icon.png'
 
 			// console.log('searchPlayer: ', this.resultPlayer)
 		})
