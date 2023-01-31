@@ -9,6 +9,7 @@ import { FormControl } from '@angular/forms'
 })
 export class FortniteComponent {
 	url = 'https://fortnite-api.com/v2/stats/br/v2/'
+	url2 = 'https://fortnite-api.com/v2/cosmetics/br/search/all'
 	head: HttpHeaders = new HttpHeaders().append(
 		'Authorization',
 		'3a924cb0-69a8-43d5-aa6d-69fc12b40991'
@@ -16,6 +17,7 @@ export class FortniteComponent {
 	playerBusca = new FormControl()
 	resultAllPlayer: any
 	resultSeasonPlayer: any
+	resultCosmetics: any
 	visible: string = 'hidden'
 	playerName: string = ''
 	playerLvl: string = ''
@@ -23,7 +25,10 @@ export class FortniteComponent {
 	playerAllKills: string = ''
 	playerSeasonWins: string = ''
 	playerSeasonKills: string = ''
-	playerImg: string = ''
+	randomImgCosmetic: string = ''
+
+	arr: any[] = []
+	getRandomElement: any
 
 	constructor(private http: HttpClient) {}
 
@@ -35,25 +40,28 @@ export class FortniteComponent {
 			this.playerLvl = this.resultAllPlayer.data.battlePass.level
 			this.playerAllWins = this.resultAllPlayer.data.stats.all.overall.wins
 			this.playerAllKills = this.resultAllPlayer.data.stats.all.overall.kills
-			// this.playerImg = this.resultAllPlayer.data.image
-			this.playerImg =
-				'https://fortnite-api.com/images/cosmetics/br/glider_id_068_garageband/icon.png'
-
-			// console.log('searchPlayer: ', this.resultPlayer)
 		})
 
 		this.getSeasonStats(playerName).subscribe((data) => {
 			this.resultSeasonPlayer = data
 			this.playerSeasonWins = this.resultSeasonPlayer.data.stats.all.overall.wins
 			this.playerSeasonKills = this.resultSeasonPlayer.data.stats.all.overall.kills
+		})
 
-			// console.log('searchPlayer: ', this.resultSeasonPlayer)
+		this.getCosmetics().subscribe((data) => {
+			this.resultCosmetics = data
+
+			console.log('resultCosmetics: ', this.resultCosmetics)
+
+			this.getRandomElement =
+				this.resultCosmetics.data[Math.floor(Math.random() * this.resultCosmetics.data.length)]
+
+			this.randomImgCosmetic = this.getRandomElement.images.featured
 		})
 	}
 
 	getAllStats(playerName: string) {
 		const params = new HttpParams().append('name', playerName)
-		// .append('image', 'all')
 
 		return this.http.get(this.url, { headers: this.head, params })
 	}
@@ -62,5 +70,11 @@ export class FortniteComponent {
 		const params = new HttpParams().append('name', playerName).append('timeWindow', 'season')
 
 		return this.http.get(this.url, { headers: this.head, params })
+	}
+
+	getCosmetics() {
+		const params = new HttpParams().append('language', 'pt-BR').append('type', 'outfit')
+
+		return this.http.get(this.url2, { params })
 	}
 }
