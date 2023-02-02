@@ -22,8 +22,12 @@ export class FortniteComponent {
 	playerName: string = ''
 	playerLvl: string = ''
 	playerAllWins: string = ''
+	playerAllMatches: string = ''
+	playerAllWinRate: string = ''
 	playerAllKills: string = ''
 	playerSeasonWins: string = ''
+	playerSeasonMatches: string = ''
+	playerSeasonWinRate: string = ''
 	playerSeasonKills: string = ''
 	randomImgCosmetic: string = ''
 
@@ -39,19 +43,26 @@ export class FortniteComponent {
 			this.playerName = this.resultAllPlayer.data.account.name
 			this.playerLvl = this.resultAllPlayer.data.battlePass.level
 			this.playerAllWins = this.resultAllPlayer.data.stats.all.overall.wins
+			this.playerAllMatches = this.resultAllPlayer.data.stats.all.overall.matches
+			this.playerAllWinRate = this.resultAllPlayer.data.stats.all.overall.winRate.toFixed(2) + '%'
 			this.playerAllKills = this.resultAllPlayer.data.stats.all.overall.kills
 		})
 
 		this.getSeasonStats(playerName).subscribe((data) => {
 			this.resultSeasonPlayer = data
 			this.playerSeasonWins = this.resultSeasonPlayer.data.stats.all.overall.wins
+			this.playerSeasonMatches = this.resultSeasonPlayer.data.stats.all.overall.matches
+			this.playerSeasonWinRate =
+				this.resultSeasonPlayer.data.stats.all.overall.winRate.toFixed(2) + '%'
 			this.playerSeasonKills = this.resultSeasonPlayer.data.stats.all.overall.kills
+
+			console.log('resultSeasonPlayer: ', this.resultSeasonPlayer)
 		})
 
 		this.getCosmetics().subscribe((data) => {
 			this.resultCosmetics = data
 
-			console.log('resultCosmetics: ', this.resultCosmetics)
+			// console.log('resultCosmetics: ', this.resultCosmetics)
 
 			this.getRandomElement =
 				this.resultCosmetics.data[Math.floor(Math.random() * this.resultCosmetics.data.length)]

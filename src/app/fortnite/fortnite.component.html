@@ -10,10 +10,12 @@
 	</div>
 </div>
 
+<img src="{{ randomImgCosmetic }}" class="mb-3 w-5 center p-4 {{ visible }}" />
+
 <div class="grid {{ visible }}">
 	<div class="col-12 p-4">
 		<div class="surface-card shadow-2 border-rounded p-3" style="border-radius: 6px">
-			<img src="{{ randomImgCosmetic }}" class="mb-3 w-5 center" />
+			<!-- <img src="{{ randomImgCosmetic }}" class="mb-3 w-5 center" /> -->
 			<div class="flex justify-content-between align-items-start">
 				<div>
 					<div class="text-xl font-medium text-100 mb-2">{{ playerName }}</div>
@@ -22,29 +24,69 @@
 					<div class="text-xl font-medium text-100 mb-2">Nvl: {{ playerLvl }}</div>
 				</div>
 			</div>
+
+			<!---------------------------------------------------------------------------------->
+
 			<ul class="list-none m-0 p-0">
+				<div class="center">
+					<div class="text-xl font-medium text-100 mb-2">Temporada Atual</div>
+				</div>
+
 				<li
 					class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border"
 				>
-					<span class="text-100 font-medium text-sm">Total de Vitórias na Season Atual</span>
+					<span class="text-100 font-medium text-sm">Vitórias</span>
 					<span class="text-100 font-medium text-sm">{{ playerSeasonWins }}</span>
 				</li>
 				<li
 					class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border"
 				>
-					<span class="text-100 font-medium text-sm">Total de Eliminações na Season Atual</span>
+					<span class="text-100 font-medium text-sm">Partidas</span>
+					<span class="text-100 font-medium text-sm">{{ playerSeasonMatches }}</span>
+				</li>
+				<li
+					class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border"
+				>
+					<span class="text-100 font-medium text-sm">Win Rate</span>
+					<span class="text-100 font-medium text-sm">{{ playerSeasonWinRate }}</span>
+				</li>
+				<li
+					class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border"
+				>
+					<span class="text-100 font-medium text-sm">Eliminações</span>
 					<span class="text-100 font-medium text-sm">{{ playerSeasonKills }}</span>
 				</li>
+			</ul>
+
+			<!---------------------------------------------------------------------------------->
+
+			<ul class="list-none m-0 p-0">
+				<div class="center">
+					<div class="text-xl font-medium text-100 mb-2">Carreira Toda</div>
+				</div>
 				<li
 					class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border"
 				>
-					<span class="text-100 font-medium text-sm">Total de Vitórias na Carreira</span>
+					<span class="text-100 font-medium text-sm ce">Vitórias</span>
 					<span class="text-100 font-medium text-sm">{{ playerAllWins }}</span>
+				</li>
+
+				<li
+					class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border"
+				>
+					<span class="text-100 font-medium text-sm">Partidas</span>
+					<span class="text-100 font-medium text-sm">{{ playerAllMatches }}</span>
 				</li>
 				<li
 					class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border"
 				>
-					<span class="text-100 font-medium text-sm">Total de Eliminações na Carreira</span>
+					<span class="text-100 font-medium text-sm">Win Rate</span>
+					<span class="text-100 font-medium text-sm">{{ playerAllWinRate }}</span>
+				</li>
+				<li
+					class="px-0 py-2 flex justify-content-between align-items-center border-bottom-1 surface-border"
+				>
+					<span class="text-100 font-medium text-sm">Eliminações</span>
 					<span class="text-100 font-medium text-sm">{{ playerAllKills }}</span>
 				</li>
 			</ul>
