@@ -46,6 +46,8 @@ export class FortniteComponent {
 			this.playerAllMatches = this.resultAllPlayer.data.stats.all.overall.matches
 			this.playerAllWinRate = this.resultAllPlayer.data.stats.all.overall.winRate.toFixed(2) + '%'
 			this.playerAllKills = this.resultAllPlayer.data.stats.all.overall.kills
+
+			console.log('resultAllPlayer: ', this.resultAllPlayer)
 		})
 
 		this.getSeasonStats(playerName).subscribe((data) => {
